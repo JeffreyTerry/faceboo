@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+
+  "name": "Faceboo",
+  "description": "Ever wish your Facebook friends were dead? Now they are!",
+  "version": "1.0",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "page_action": {
+    "default_icon": {
+      "19": "icon19.png",
+      "38": "icon38.png"
+    },
+    "default_title": "Faceboo",
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.facebook.com/*"],
+      "js": ["main.js"]
+    }
+  ],
+  
+  "permissions" : [
+      "declarativeContent"
+  ]
+  // "permissions": [
+  //   "activeTab",
+  //   "https://www.facebook.com/"
+  // ]
+}
